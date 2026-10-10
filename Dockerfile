@@ -1,16 +1,18 @@
-# Multi-stage Dockerfile for Self-Hosted Ambient Radio with yt-dlp & FFmpeg
-FROM node:22-alpine AS builder
+# Multi-stage Dockerfile for Kaminari Radio with yt-dlp & FFmpeg.
+# Uses bun as the package manager and runtime, matching the committed bun.lock
+# (there is no package-lock.json, so `npm ci` won't work here).
+FROM oven/bun:1.2-alpine AS builder
 
 WORKDIR /app
 
-COPY package*.json ./
-RUN npm ci
+COPY package.json bun.lock ./
+RUN bun install --frozen-lockfile
 
 COPY . ./
-RUN npm run build
+RUN bun run build
 
 # Production runtime stage
-FROM node:22-alpine AS runner
+FROM oven/bun:1.2-alpine AS runner
 
 WORKDIR /app
 
@@ -27,8 +29,8 @@ RUN apk add --no-cache python3 ffmpeg curl bash \
 RUN mkdir -p /app/data/music /app/data/artwork /app/data/temp /app/data/backups
 
 # Copy package files and install production dependencies
-COPY package*.json ./
-RUN npm ci --omit=dev && npm install -g tsx
+COPY package.json bun.lock ./
+RUN bun install --frozen-lockfile --production
 
 # Copy built frontend assets and server modules
 COPY --from=builder /app/dist ./dist
@@ -45,4 +47,4 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
 
 VOLUME ["/app/data"]
 
-CMD ["tsx", "server.ts"]
+CMD ["bun", "server.ts"]

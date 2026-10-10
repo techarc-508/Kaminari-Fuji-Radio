@@ -1,27 +1,29 @@
 services:
-  ambient-radio:
+  kaminari-radio:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: retro-ambient-radio
+    image: kaminari-radio:latest
+    container_name: kaminari-radio
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "${HOST_PORT:-3000}:3000"
     environment:
       - NODE_ENV=production
       - PORT=3000
       - DATA_DIR=/app/data
-      - ADMIN_USERNAME=admin
-      - ADMIN_PASSWORD=ambient-radio-admin
+      - APP_URL=${APP_URL:-http://localhost:3000}
+      - ADMIN_USERNAME=${ADMIN_USERNAME:-admin}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:?set ADMIN_PASSWORD in .env}
     volumes:
-      # Persistent local music directory
-      - radio-music:/app/data/music
+      # Music library: bind to a host directory (MUSIC_HOST_DIR) or a named volume by default
+      - ${MUSIC_HOST_DIR:-kaminari-music}:/app/data/music
       # Persistent artwork directory
-      - radio-artwork:/app/data/artwork
+      - kaminari-artwork:/app/data/artwork
       # Database and application settings
-      - radio-data:/app/data
+      - kaminari-data:/app/data
       # Temporary download directory for active yt-dlp jobs
-      - radio-temp:/app/data/temp
+      - kaminari-temp:/app/data/temp
     healthcheck:
       test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/api/stations"]
       interval: 30s
@@ -30,11 +32,11 @@ services:
       start_period: 10s
 
 volumes:
-  radio-music:
+  kaminari-music:
     driver: local
-  radio-artwork:
+  kaminari-artwork:
     driver: local
-  radio-data:
+  kaminari-data:
     driver: local
-  radio-temp:
+  kaminari-temp:
     driver: local
