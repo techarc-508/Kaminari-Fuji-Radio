@@ -1,7 +1,7 @@
 # Multi-stage Dockerfile for Kaminari Radio with yt-dlp & FFmpeg.
 # Uses bun as the package manager and runtime, matching the committed bun.lock
 # (there is no package-lock.json, so `npm ci` won't work here).
-FROM oven/bun:1.2-alpine AS builder
+FROM oven/bun:1.4-alpine AS builder
 
 WORKDIR /app
 
@@ -12,7 +12,7 @@ COPY . ./
 RUN bun run build
 
 # Production runtime stage
-FROM oven/bun:1.2-alpine AS runner
+FROM oven/bun:1.4-alpine AS runner
 
 WORKDIR /app
 
