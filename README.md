@@ -1,4 +1,4 @@
-# Self-Hosted Ambient Radio Receiver — Retro Web Music Player
+# Kaminari Radio — Self-Hosted Ambient & Retro Web Radio
 
 A self-hosted personal internet radio and ambient music player inspired by vintage desktop receivers. Features warm cream/beige paper textures, thin dark borders, monospaced metadata, serif typography, tactile playback controls, and a signature crimson red accent.
 
@@ -29,8 +29,11 @@ The easiest way to run the radio receiver on your home server, NAS, or mini PC:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/retro-ambient-radio.git
-cd retro-ambient-radio
+git clone https://github.com/techarc-508/Kaminari-Fuji-Radio.git
+cd Kaminari-Fuji-Radio
+
+# Create .env with your admin credentials (see .env.example)
+cp .env.example .env
 
 # Start the service
 docker compose up -d
@@ -85,13 +88,13 @@ To back up your library metadata, playlists, and configuration:
 
 ```bash
 # Backup the data directory
-docker compose exec ambient-radio tar -czf /app/data/backups/backup-$(date +%F).tar.gz /app/data/db.json
+docker compose exec kaminari-radio tar -czf /app/data/backups/backup-$(date +%F).tar.gz /app/data/db.json
 ```
 
 ### Restore
 To restore:
 ```bash
-docker compose cp ./backup.tar.gz retro-ambient-radio:/app/data/
+docker compose cp ./backup.tar.gz kaminari-radio:/app/data/
 docker compose restart
 ```
 

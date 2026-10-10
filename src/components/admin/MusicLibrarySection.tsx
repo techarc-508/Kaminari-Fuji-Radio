@@ -297,7 +297,7 @@ export const MusicLibrarySection: React.FC<MusicLibrarySectionProps> = ({ onEdit
                     <div className="flex items-center justify-end gap-1">
                       <button
                         onClick={() => playTrack(track)}
-                        title="Play in radio receiver"
+                        title="Play in Kaminari Radio"
                         className="p-1 border border-[#3e3831] bg-[#ece6d8] hover:bg-[#c52838] hover:text-white transition-colors"
                       >
                         <Play className="w-3.5 h-3.5 fill-current ml-0.5" />

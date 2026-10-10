@@ -61,7 +61,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onBackToRadio })
 
           <div>
             <h1 className="font-serif font-bold text-2xl text-[#2d2722]">
-              Radio Receiver Administration
+              Kaminari Radio Administration
             </h1>
             <p className="text-xs font-mono text-[#746b60] mt-1">
               yt-dlp Music Ingestion, Storage Pipeline & Catalog Management
@@ -84,7 +84,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onBackToRadio })
               onClick={onBackToRadio}
               className="w-full py-2 border border-[#3e3831] bg-[#ece6d8] hover:bg-[#dcd6c7] text-[#2d2722] text-xs font-mono transition-colors"
             >
-              ← Return to Radio Receiver
+              ← Return to Kaminari Radio
             </button>
           </div>
         </div>
@@ -111,7 +111,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onBackToRadio })
             className="flex items-center gap-1.5 px-2.5 py-1 border border-[#3e3831] bg-[#e4dfd1] hover:bg-[#dcd6c7] text-xs font-mono text-[#2d2722] transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
-            <span>Radio Receiver</span>
+            <span>Kaminari Radio</span>
           </button>
 
           <div className="h-4 w-[1px] bg-[#3e3831]/40 hidden sm:block" />

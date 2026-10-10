@@ -89,7 +89,7 @@ export const PlaylistsSection: React.FC = () => {
       subtitle: `${activePlaylist.name} · curated station preset`,
       description: `Radio station created from playlist with ${playlistTracks.length} tracks.`,
     });
-    setSuccessMsg(`Created radio preset station "${activePlaylist.name}"! It is now active on the Radio Receiver.`);
+    setSuccessMsg(`Created radio preset station "${activePlaylist.name}"! It is now active on Kaminari Radio.`);
     setTimeout(() => setSuccessMsg(null), 5000);
   };
 

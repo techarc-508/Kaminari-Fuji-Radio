@@ -1,6 +1,6 @@
 {
-  "name": "Radio Receiver — Ambient & Retro Web Player",
-  "description": "A self-hosted retro desktop radio and ambient music player with vintage beige styling, continuous playback, audio presets, custom playlists, and local library management.",
+  "name": "Kaminari Radio — Ambient & Retro Web Player",
+  "description": "A self-hosted retro desktop radio and ambient music player with vintage beige styling, continuous playback, audio presets, custom playlists, and a local high-quality music library with built-in yt-dlp ingestion.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

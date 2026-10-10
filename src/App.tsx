@@ -158,7 +158,7 @@ function MainApp() {
             <Radio className="w-3.5 h-3.5" />
           </div>
           <span className="font-serif font-bold text-lg md:text-xl tracking-tight text-[#2d2722]">
-            Radio Receiver
+            Kaminari Radio
           </span>
         </div>
 
@@ -426,7 +426,7 @@ function MainApp() {
       {/* Footer */}
       <footer className="border-t border-[#3e3831] bg-[#e4dfd1]/80 px-4 py-3 mt-auto text-xs font-mono text-[#746b60] flex flex-col sm:flex-row items-center justify-between gap-2">
         <div className="flex items-center gap-2">
-          <span>Self-Hosted Ambient Radio Receiver</span>
+          <span>Self-Hosted Kaminari Radio</span>
           <span>·</span>
           <span>Continuous Instrumental & Lofi Broadcast</span>
         </div>

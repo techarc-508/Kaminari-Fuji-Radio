@@ -30,7 +30,7 @@ export const RadioStationsSection: React.FC = () => {
       setStreamUrl('');
       setSubtitle('');
       setDescription('');
-      setStatusMsg(`Preset "${name.trim()}" added to Radio Receiver.`);
+      setStatusMsg(`Preset "${name.trim()}" added to Kaminari Radio.`);
       setTimeout(() => setStatusMsg(null), 4000);
     }
   };
@@ -40,7 +40,7 @@ export const RadioStationsSection: React.FC = () => {
       <div className="border-b border-[#3e3831] pb-3 flex items-center justify-between">
         <div>
           <h2 className="text-xl font-serif font-bold text-[#2d2722]">
-            Radio Receiver Station Presets
+            Kaminari Radio Station Presets
           </h2>
           <p className="text-xs font-mono text-[#746b60]">
             Manage continuous audio streams and preset buttons displayed on the main radio receiver

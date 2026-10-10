@@ -429,7 +429,7 @@ export const RadioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   // Update Media Session API
   useEffect(() => {
     if ('mediaSession' in navigator) {
-      const title = currentTrack?.title || currentStation?.name || 'Radio Receiver';
+      const title = currentTrack?.title || currentStation?.name || 'Kaminari Radio';
       const artist = currentTrack?.artist || currentStation?.genre || 'Ambient Stream';
       const album = currentTrack?.album || currentStation?.subtitle || 'Retro Web Radio';
 

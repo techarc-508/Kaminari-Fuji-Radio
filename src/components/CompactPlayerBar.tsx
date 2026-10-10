@@ -185,7 +185,7 @@ export const CompactPlayerBar: React.FC<CompactPlayerBarProps> = ({
           {onExpand && (
             <button
               onClick={onExpand}
-              title="Expand full radio receiver panel"
+              title="Expand full Kaminari Radio panel"
               className="px-2 py-1 h-8 border border-[#3e3831] bg-[#e4dfd1] hover:bg-[#dcd6c7] text-[#2d2722] text-xs font-mono hidden sm:flex items-center gap-1 transition-colors"
             >
               <Maximize2 className="w-3 h-3 text-[#c52838]" />

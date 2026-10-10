@@ -54,7 +54,7 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({ isOpen, onClos
               Administrator Login
             </h3>
             <p className="text-[11px] font-mono text-[#746b60]">
-              Radio receiver management & ingestion
+              Kaminari Radio management & ingestion
             </p>
           </div>
         </div>

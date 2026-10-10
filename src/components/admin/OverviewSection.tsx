@@ -113,10 +113,10 @@ export const OverviewSection: React.FC<OverviewSectionProps> = ({ onNavigate }) 
           </div>
           <div>
             <div className="text-[10px] font-mono uppercase text-[#746b60] tracking-wider">
-              Radio Receiver Broadcast Status: <span className="font-bold text-[#c52838]">{playbackStatus.toUpperCase()}</span>
+              Kaminari Radio Broadcast Status: <span className="font-bold text-[#c52838]">{playbackStatus.toUpperCase()}</span>
             </div>
             <h3 className="font-serif font-bold text-base text-[#2d2722]">
-              {currentTrack?.title || currentStation?.name || 'Radio Receiver Idle'}
+              {currentTrack?.title || currentStation?.name || 'Kaminari Radio Idle'}
             </h3>
             <p className="text-xs font-mono text-[#746b60]">
               {currentTrack ? `${currentTrack.artist} · ${currentTrack.genre}` : currentStation?.subtitle || 'Select preset to play'}

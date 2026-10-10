@@ -57,7 +57,7 @@ export const RadioReceiver: React.FC<RadioReceiverProps> = ({ onOpenAddStream })
   const [showSleepDropdown, setShowSleepDropdown] = useState(false);
 
   // Active display title and artist
-  const displayTitle = currentTrack?.title || currentStation?.name || 'Ambient Radio Receiver';
+  const displayTitle = currentTrack?.title || currentStation?.name || 'Kaminari Radio';
   const displaySubtitle = currentTrack
     ? `${currentTrack.artist}${currentTrack.album ? ` · ${currentTrack.album}` : ''}`
     : currentStation?.nowPlaying?.artist || currentStation?.genre || 'iLoveRadio';
@@ -89,7 +89,7 @@ export const RadioReceiver: React.FC<RadioReceiverProps> = ({ onOpenAddStream })
       <div className="flex items-start justify-between mb-4">
         <div>
           <h1 className="text-2xl md:text-3xl font-serif font-bold text-[#2d2722] tracking-tight">
-            Radio receiver
+            Kaminari Radio
           </h1>
           <p className="text-xs font-mono text-[#746b60] mt-0.5">
             {currentStation?.subtitle || (currentTrack ? `${currentTrack.genre} · track` : 'Lofi Chillhop · live stream')}
