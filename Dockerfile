@@ -20,8 +20,8 @@ ENV NODE_ENV=production
 ENV PORT=3000
 ENV DATA_DIR=/app/data
 
-# Install Python3, FFmpeg, curl, and pinned yt-dlp release
-RUN apk add --no-cache python3 ffmpeg curl bash \
+# Install Python3, FFmpeg, curl, nodejs (yt-dlp JS runtime for YouTube), and yt-dlp release
+RUN apk add --no-cache python3 ffmpeg curl bash nodejs \
   && curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp \
   && chmod a+rx /usr/local/bin/yt-dlp
 

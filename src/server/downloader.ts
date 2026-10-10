@@ -69,6 +69,7 @@ export async function inspectUrl(url: string): Promise<VideoInspectResult> {
       '--flat-playlist',
       '--skip-download',
       '--no-warnings',
+      '--js-runtimes', 'node',
       url,
     ];
 
@@ -246,6 +247,7 @@ export async function runJob(
     '--audio-quality', quality,
     '--embed-thumbnail',
     '--add-metadata',
+    '--js-runtimes', 'node',
     '--no-playlist', // download individually or handle
     '-o', outputTemplate,
     '--newline',
